@@ -1,0 +1,180 @@
+[
+  {
+    "id": "dpdp-2023",
+    "title": "Digital Personal Data Protection Act",
+    "year": 2023,
+    "category": "Data Protection",
+    "icon": "shield",
+    "authority": "Ministry of Electronics & IT (MeitY)",
+    "status": "In force",
+    "shortDesc": "Governs the processing of digital personal data, balancing individuals' right to protect their data with the need to process it for lawful purposes.",
+    "sections": 44,
+    "lastUpdated": "2024-11-18",
+    "formats": ["PDF", "XML", "API"],
+    "apiSlug": "dpdp-2023",
+    "provisions": [
+      { "num": "S. 4", "title": "Grounds for Processing Personal Data", "text": "A person may process the personal data of a Data Principal only for a lawful purpose for which the Data Principal has given consent, or for certain legitimate uses.", "rules": ["Consent must be free, specific, informed, unconditional and unambiguous.", "Processing limited to the purpose for which consent was given.", "Legitimate uses include state benefits, employment and medical emergencies."] },
+      { "num": "S. 5", "title": "Notice", "text": "Every request for consent must be accompanied by a notice informing the Data Principal of the personal data and purpose of processing.", "rules": ["Notice must be in clear and plain language.", "Must be available in English and the 22 scheduled languages.", "Must describe how to exercise rights and file complaints."] },
+      { "num": "S. 6", "title": "Consent", "text": "Consent given by the Data Principal shall be limited to such personal data as is necessary for the specified purpose.", "rules": ["Data Principal may withdraw consent at any time.", "Withdrawal must be as easy as giving consent.", "Consent Managers must be registered with the Board."] },
+      { "num": "S. 8", "title": "Duties of Data Fiduciary", "text": "A Data Fiduciary must implement appropriate technical and organisational measures and protect personal data in its possession.", "rules": ["Implement reasonable security safeguards to prevent breaches.", "Notify the Board and affected Data Principals of any breach.", "Erase personal data when consent is withdrawn or purpose served."] },
+      { "num": "S. 9", "title": "Processing Data of Children", "text": "A Data Fiduciary must obtain verifiable consent of a parent before processing the personal data of a child (under 18).", "rules": ["No tracking or behavioural monitoring of children.", "No targeted advertising directed at children.", "Verifiable parental consent required."] },
+      { "num": "S. 33", "title": "Penalties", "text": "The Data Protection Board may impose monetary penalties for breach of the provisions of the Act, up to ₹250 crore per instance.", "rules": ["Up to ₹250 crore for failure to prevent a data breach.", "Up to ₹200 crore for failure of obligations relating to children.", "Up to ₹50 crore for breach of other duties."] }
+    ],
+    "penalties": [
+      { "breach": "Failure to take reasonable security safeguards to prevent a personal data breach", "max": 250, "unit": "crore" },
+      { "breach": "Failure to notify the Board and affected persons of a data breach", "max": 200, "unit": "crore" },
+      { "breach": "Non-fulfilment of additional obligations relating to children", "max": 200, "unit": "crore" },
+      { "breach": "Breach of any other provision of the Act or Rules", "max": 50, "unit": "crore" }
+    ]
+  },
+  {
+    "id": "online-gaming-rules-2026",
+    "title": "Promotion and Regulation of Online Gaming Rules",
+    "year": 2026,
+    "category": "Cyber Law",
+    "icon": "gamepad",
+    "authority": "Ministry of Electronics & IT (MeitY)",
+    "status": "In force",
+    "shortDesc": "Rules under the Promotion and Regulation of Online Gaming Act, 2025, establishing the Online Gaming Authority of India and the framework for determination, registration and oversight of online games, e-sports and online social games.",
+    "sections": 26,
+    "lastUpdated": "2026-05-01",
+    "formats": ["PDF", "XML", "API"],
+    "apiSlug": "online-gaming-rules-2026",
+    "provisions": [
+      { "num": "R. 6", "title": "Powers and functions of the Authority", "text": "The Online Gaming Authority of India maintains the list of online money games, records determinations and registrations, inquires into complaints, and issues directions, guidelines and codes of practice for offering online games.", "rules": ["Maintain and publish the list of online money games (R. 26).", "Record and publish determined or registered games.", "Issue directions on registration, grievance redressal, user verification and payments."] },
+      { "num": "R. 8", "title": "Determination of an online game", "text": "An online game must be determined by the Authority where it is offered as an e-sport, where the Central Government notifies a category of social games, or where the Authority acts suo motu.", "rules": ["Apply in the Authority's digital form with details under Rule 23.", "Determination is triggered by e-sport intent, Government notification, or suo motu notice.", "No determination needed for ordinary social games unless required."] },
+      { "num": "R. 9", "title": "Factors for determination", "text": "The Authority weighs whether the game involves payment of fees or stakes, an expectation of monetary winnings, the revenue model, and how rewards or in-game assets can be monetised outside the game.", "rules": ["Stakes deposited in expectation of winnings indicate an online money game.", "Subscription or one-time access fees indicate a social game.", "Bets and wagers in expectation of winnings indicate an online money game."] },
+      { "num": "R. 10", "title": "Procedure for determination", "text": "On a suo motu or application-based determination, the Authority issues notice, examines technical architecture, gameplay, revenue model and user interface, and issues a determination order, ordinarily within ninety days.", "rules": ["Provide a reasonable opportunity to submit representation.", "Examine technical architecture, gameplay mechanics and revenue model.", "Determination order issued within ninety days of a complete application."] },
+      { "num": "R. 12-14", "title": "Registration and Certificate of Registration", "text": "Games requiring registration must apply to the Authority; on success a digital Certificate of Registration with a unique number is issued, valid up to ten years unless surrendered, suspended or cancelled.", "rules": ["Separate registration required for each online game.", "Online money games cannot be registered as e-sports.", "Certificate valid up to ten years; suspension or cancellation only after a hearing."] },
+      { "num": "R. 15-20", "title": "Ongoing operator obligations", "text": "Operators must display determination or registration details, avoid misrepresentation, designate a point of contact, retain data on computer resources in India, comply with payment-facilitation rules, and run a grievance redressal mechanism.", "rules": ["Prominently display determination or registration; no misrepresentation.", "Retain traffic data and metadata in India per directions.", "Maintain a functional grievance redressal mechanism with appeal to the Authority."] },
+      { "num": "R. 21-22", "title": "Imposition and recovery of penalty", "text": "On a complaint or suo motu, the Authority inquires into alleged non-compliance under Section 12 of the Act, and may impose penalties, suspend or cancel registration, or prohibit offering the game; penalties are credited to the Consolidated Fund of India.", "rules": ["Inquiry concluded within ninety days of the complaint.", "Authority may penalise, suspend/cancel registration, or prohibit the game.", "Penalties credited to the Consolidated Fund of India."] }
+    ],
+    "penalties": [
+      { "breach": "Offering, operating or facilitating an online money game in contravention of the Act", "max": 1, "unit": "crore" },
+      { "breach": "Advertising or promoting an online money game", "max": 0.5, "unit": "crore" },
+      { "breach": "Facilitating financial transactions or authorisation of funds for a prohibited online money game", "max": 1, "unit": "crore" },
+      { "breach": "Repeat or continuing contravention under Section 12 of the Act", "max": 2, "unit": "crore" }
+    ]
+  },
+  {
+    "id": "it-act-2000",
+    "title": "Information Technology Act",
+    "year": 2000,
+    "category": "Cyber Law",
+    "icon": "laptop",
+    "authority": "Ministry of Electronics & IT (MeitY)",
+    "status": "In force",
+    "shortDesc": "Provides legal recognition for electronic transactions, digital signatures, and a framework for cyber offences and intermediary liability.",
+    "sections": 94,
+    "lastUpdated": "2024-08-02",
+    "formats": ["PDF", "XML", "API"],
+    "apiSlug": "it-act-2000",
+    "provisions": [
+      { "num": "S. 43A", "title": "Compensation for failure to protect data", "text": "A body corporate handling sensitive personal data that is negligent in maintaining reasonable security practices is liable to pay damages.", "rules": ["Applies to bodies corporate possessing sensitive personal data.", "Liability arises from negligence causing wrongful loss or gain.", "Compensation payable to the affected person."] },
+      { "num": "S. 66", "title": "Computer-related offences", "text": "Dishonestly or fraudulently doing any act referred to in section 43 is punishable with imprisonment and/or fine.", "rules": ["Imprisonment up to 3 years.", "Fine up to ₹5 lakh.", "Covers hacking, data theft and unauthorised access."] },
+      { "num": "S. 69A", "title": "Power to block public access", "text": "The Central Government may direct any agency to block public access to any information through a computer resource in the interest of sovereignty, security or public order.", "rules": ["Reasons must be recorded in writing.", "Procedure governed by Blocking Rules, 2009.", "Non-compliance by intermediary is punishable."] },
+      { "num": "S. 79", "title": "Intermediary liability (Safe Harbour)", "text": "Intermediaries are not liable for third-party information if they observe due diligence and comply with prescribed guidelines.", "rules": ["Must not initiate, select receiver of, or modify the transmission.", "Must observe IT (Intermediary Guidelines) Rules, 2021.", "Must remove unlawful content on actual knowledge or government order."] }
+    ],
+    "penalties": [
+      { "breach": "Negligent handling of sensitive personal data (S.43A)", "max": 5, "unit": "crore" },
+      { "breach": "Computer-related fraud / hacking (S.66)", "max": 0.05, "unit": "crore" },
+      { "breach": "Failure of intermediary due diligence (S.79 r/w Rules)", "max": 1, "unit": "crore" }
+    ]
+  },
+  {
+    "id": "consumer-protection-2019",
+    "title": "Consumer Protection Act",
+    "year": 2019,
+    "category": "Consumer",
+    "icon": "cart",
+    "authority": "Ministry of Consumer Affairs",
+    "status": "In force",
+    "shortDesc": "Protects consumer interests with provisions for product liability, e-commerce rules, unfair trade practices, and a Central Consumer Protection Authority.",
+    "sections": 107,
+    "lastUpdated": "2024-06-21",
+    "formats": ["PDF", "XML", "API"],
+    "apiSlug": "consumer-protection-2019",
+    "provisions": [
+      { "num": "S. 2(47)", "title": "Unfair Trade Practice", "text": "Defines unfair trade practices including false representation, misleading advertisements and non-issuance of bills.", "rules": ["Covers false claims about quality or standard.", "Includes misleading warranties and guarantees.", "Bait advertising and bargain-price deception covered."] },
+      { "num": "S. 21", "title": "Power to issue directions on misleading ads", "text": "The Central Authority may direct discontinuation of false or misleading advertisements and impose penalties on endorsers.", "rules": ["Penalty up to ₹10 lakh on manufacturer/endorser.", "Repeat offence up to ₹50 lakh.", "Endorser may be barred for up to 3 years."] },
+      { "num": "S. 84", "title": "Product liability — manufacturer", "text": "A product manufacturer is liable in a product liability action if the product contains a manufacturing defect or deviates from specifications.", "rules": ["Liability even without negligence for manufacturing defects.", "Covers design defects and inadequate instructions.", "Express warranty failures included."] },
+      { "num": "S. 94", "title": "E-commerce & direct selling rules", "text": "Empowers the Government to make rules to prevent unfair trade practices in e-commerce and direct selling.", "rules": ["Mandatory disclosure of seller details.", "Grievance officer and 48-hour acknowledgement.", "No manipulation of price or consumer reviews."] }
+    ],
+    "penalties": [
+      { "breach": "Misleading advertisement (manufacturer / endorser)", "max": 0.5, "unit": "crore" },
+      { "breach": "Manufacture/sale of adulterated or spurious goods", "max": 0.1, "unit": "crore" },
+      { "breach": "Non-compliance with e-commerce disclosure rules", "max": 0.1, "unit": "crore" }
+    ]
+  },
+  {
+    "id": "companies-act-2013",
+    "title": "Companies Act",
+    "year": 2013,
+    "category": "Corporate",
+    "icon": "building",
+    "authority": "Ministry of Corporate Affairs",
+    "status": "In force",
+    "shortDesc": "The principal statute governing incorporation, governance, financial reporting, audits, and dissolution of companies in India.",
+    "sections": 470,
+    "lastUpdated": "2025-01-15",
+    "formats": ["PDF", "XML", "API"],
+    "apiSlug": "companies-act-2013",
+    "provisions": [
+      { "num": "S. 134", "title": "Financial statement & Board's report", "text": "The Board's report must be attached to financial statements and disclose prescribed matters including director responsibility.", "rules": ["Director's Responsibility Statement mandatory.", "Disclosure of material changes and CSR policy.", "Signed by the chairperson or two directors."] },
+      { "num": "S. 135", "title": "Corporate Social Responsibility", "text": "Companies meeting prescribed thresholds must spend at least 2% of average net profits on CSR activities.", "rules": ["Applies if net worth ≥ ₹500 cr, turnover ≥ ₹1000 cr or profit ≥ ₹5 cr.", "Constitute a CSR Committee.", "Unspent amounts to be transferred to a fund."] },
+      { "num": "S. 138", "title": "Internal audit", "text": "Prescribed classes of companies must appoint an internal auditor to conduct internal audit of functions and activities.", "rules": ["Mandatory for listed and large companies.", "Auditor may be CA, cost accountant or other professional.", "Scope determined by Audit Committee."] },
+      { "num": "S. 447", "title": "Punishment for fraud", "text": "Any person found guilty of fraud is punishable with imprisonment and fine which may extend to three times the amount involved.", "rules": ["Imprisonment 6 months to 10 years.", "Fine up to 3x the amount involved in fraud.", "Non-compoundable if public interest involved."] }
+    ],
+    "penalties": [
+      { "breach": "Corporate fraud (S.447)", "max": 100, "unit": "crore" },
+      { "breach": "Failure to comply with CSR provisions (S.135)", "max": 1, "unit": "crore" },
+      { "breach": "Default in filing financial statements", "max": 0.1, "unit": "crore" }
+    ]
+  },
+  {
+    "id": "rti-act-2005",
+    "title": "Right to Information Act",
+    "year": 2005,
+    "category": "Governance",
+    "icon": "scroll",
+    "authority": "Dept. of Personnel & Training",
+    "status": "In force",
+    "shortDesc": "Empowers citizens to request information from public authorities, promoting transparency and accountability in the working of government.",
+    "sections": 31,
+    "lastUpdated": "2024-03-10",
+    "formats": ["PDF", "XML", "API"],
+    "apiSlug": "rti-act-2005",
+    "provisions": [
+      { "num": "S. 4", "title": "Proactive disclosure obligations", "text": "Every public authority must maintain records and publish prescribed categories of information suo motu.", "rules": ["Publish organisation particulars and functions.", "Disclose budgets and subsidy programmes.", "Update published information periodically."] },
+      { "num": "S. 6", "title": "Request for information", "text": "A person may request information by application in writing or electronic means to the Public Information Officer.", "rules": ["No reason for seeking information required.", "Fee as prescribed.", "Transfer to correct authority within 5 days."] },
+      { "num": "S. 7", "title": "Disposal of request", "text": "The PIO must provide information within 30 days of receipt of the request (48 hours where life or liberty is concerned).", "rules": ["30-day standard timeline.", "48 hours for life and liberty matters.", "Failure deemed refusal."] },
+      { "num": "S. 20", "title": "Penalties on PIO", "text": "The Information Commission may impose a penalty on a PIO for delay or malafide refusal of information.", "rules": ["₹250 per day of delay, up to ₹25,000.", "Disciplinary action may be recommended.", "Burden of proof on the PIO."] }
+    ],
+    "penalties": [
+      { "breach": "Delay/malafide refusal by Public Information Officer (S.20)", "max": 0.0025, "unit": "crore" }
+    ]
+  },
+  {
+    "id": "pmla-2002",
+    "title": "Prevention of Money Laundering Act",
+    "year": 2002,
+    "category": "Financial",
+    "icon": "coins",
+    "authority": "Dept. of Revenue / FIU-IND",
+    "status": "In force",
+    "shortDesc": "Prevents money laundering and provides for confiscation of property derived from laundering, with reporting obligations on financial entities.",
+    "sections": 75,
+    "lastUpdated": "2024-09-30",
+    "formats": ["PDF", "XML", "API"],
+    "apiSlug": "pmla-2002",
+    "provisions": [
+      { "num": "S. 3", "title": "Offence of money laundering", "text": "Whosoever directly or indirectly attempts to indulge in or knowingly assists in any process connected with proceeds of crime commits money laundering.", "rules": ["Covers concealment, possession, acquisition and use.", "Projecting proceeds as untainted property.", "Continuing offence until enjoyment of proceeds ceases."] },
+      { "num": "S. 12", "title": "Obligations of reporting entities", "text": "Reporting entities must maintain records of transactions, verify client identity and furnish information to the Director.", "rules": ["Maintain records for 5 years.", "Conduct KYC and client due diligence.", "File Suspicious Transaction Reports (STRs)."] },
+      { "num": "S. 4", "title": "Punishment for money laundering", "text": "Money laundering is punishable with rigorous imprisonment and fine.", "rules": ["Imprisonment 3 to 7 years.", "Up to 10 years where NDPS offence involved.", "Fine as determined by the court."] }
+    ],
+    "penalties": [
+      { "breach": "Failure of reporting entity to maintain records / report (S.13)", "max": 0.01, "unit": "crore" },
+      { "breach": "Engaging in money laundering (S.4) — fine component", "max": 0.05, "unit": "crore" }
+    ]
+  }
+]

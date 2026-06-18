@@ -1,0 +1,450 @@
+[
+  {
+    "id": "significant-data-fiduciary",
+    "label": "Significant Data Fiduciary",
+    "triggers": [
+      {
+        "id": "sdf_designation_received",
+        "label": "sdf_designation_received",
+        "rules": [
+          {
+            "id": "DPDP-SDF-ECP-1",
+            "title": "Appoint Data Protection Officer (India-based)",
+            "tier": "mandatory",
+            "clauses": ["Section 10"],
+            "actions": [
+              "Mandatory DPO",
+              "Independent auditor",
+              "DPIA",
+              "Periodic audits",
+              "Additional measures as prescribed."
+            ],
+            "artifacts": [
+              "DPO Appointment Record",
+              "Auditor Appointment Record",
+              "DPIA Report",
+              "Audit Report"
+            ],
+            "penalty": 150,
+            "penaltyBasis": "Failure to register or comply as SDF",
+            "penaltyRef": "Schedule 1 Item 5"
+          },
+          {
+            "id": "DPDP-SDF-ECP-2",
+            "title": "Appoint independent data auditor",
+            "tier": "mandatory",
+            "clauses": ["Section 10"],
+            "actions": ["Complete step: Appoint independent data auditor"],
+            "artifacts": [
+              "DPO Appointment Record",
+              "Auditor Appointment Record",
+              "DPIA Report",
+              "Audit Report"
+            ],
+            "penalty": 150,
+            "penaltyBasis": "Failure to register or comply as SDF",
+            "penaltyRef": "Schedule 1 Item 5"
+          },
+          {
+            "id": "DPDP-SDF-ECP-5",
+            "title": "Report and govern via board-level oversight",
+            "tier": "mandatory",
+            "clauses": ["Section 10"],
+            "actions": ["Complete step: Report and govern via board-level oversight"],
+            "artifacts": [
+              "DPO Appointment Record",
+              "Auditor Appointment Record",
+              "DPIA Report",
+              "Audit Report"
+            ],
+            "penalty": 150,
+            "penaltyBasis": "Failure to register or comply as SDF",
+            "penaltyRef": "Schedule 1 Item 5"
+          },
+          {
+            "id": "DPDP-SDF-ECP-6",
+            "title": "Maintain grievance and regulator interface",
+            "tier": "mandatory",
+            "clauses": ["Section 10"],
+            "actions": ["Complete step: Maintain grievance and regulator interface"],
+            "artifacts": [
+              "DPO Appointment Record",
+              "Auditor Appointment Record",
+              "DPIA Report",
+              "Audit Report"
+            ],
+            "penalty": 150,
+            "penaltyBasis": "Failure to register or comply as SDF",
+            "penaltyRef": "Schedule 1 Item 5"
+          },
+          {
+            "id": "DPDP-SDF-ECP-3",
+            "title": "Conduct periodic Data Protection Impact Assessment",
+            "tier": "recommended",
+            "clauses": ["Section 10"],
+            "actions": ["Complete step: Conduct periodic Data Protection Impact Assessment"],
+            "artifacts": [
+              "DPO Appointment Record",
+              "Auditor Appointment Record",
+              "DPIA Report",
+              "Audit Report"
+            ],
+            "penalty": 150,
+            "penaltyBasis": "Failure to register or comply as SDF",
+            "penaltyRef": "Schedule 1 Item 5"
+          },
+          {
+            "id": "DPDP-SDF-ECP-4",
+            "title": "Run periodic compliance audits",
+            "tier": "recommended",
+            "clauses": ["Section 10"],
+            "actions": ["Complete step: Run periodic compliance audits"],
+            "artifacts": [
+              "DPO Appointment Record",
+              "Auditor Appointment Record",
+              "DPIA Report",
+              "Audit Report"
+            ],
+            "penalty": 150,
+            "penaltyBasis": "Failure to register or comply as SDF",
+            "penaltyRef": "Schedule 1 Item 5"
+          }
+        ]
+      },
+      {
+        "id": "personal_data_breach_detected",
+        "label": "personal_data_breach_detected",
+        "rules": [
+          {
+            "id": "DPDP-SDF-BR-1",
+            "title": "Notify the Data Protection Board of the breach",
+            "tier": "mandatory",
+            "clauses": ["Section 8(6)"],
+            "actions": ["Complete step: Notify the Data Protection Board of the breach"],
+            "artifacts": ["Breach Notification Record", "Incident Report"],
+            "penalty": 250,
+            "penaltyBasis": "Failure to notify a personal data breach",
+            "penaltyRef": "Schedule 1 Item 1"
+          },
+          {
+            "id": "DPDP-SDF-BR-2",
+            "title": "Notify each affected Data Principal",
+            "tier": "mandatory",
+            "clauses": ["Section 8(6)"],
+            "actions": ["Complete step: Notify each affected Data Principal"],
+            "artifacts": ["Affected Principals Register", "Notification Log"],
+            "penalty": 250,
+            "penaltyBasis": "Failure to notify affected persons of a breach",
+            "penaltyRef": "Schedule 1 Item 1"
+          },
+          {
+            "id": "DPDP-SDF-BR-3",
+            "title": "Remediate and document the root cause",
+            "tier": "recommended",
+            "clauses": ["Section 8(5)"],
+            "actions": ["Complete step: Remediate and document the root cause"],
+            "artifacts": ["Remediation Plan", "Root Cause Analysis"],
+            "penalty": 250,
+            "penaltyBasis": "Failure to take reasonable security safeguards",
+            "penaltyRef": "Schedule 1 Item 1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "data-fiduciary",
+    "label": "Data Fiduciary",
+    "triggers": [
+      {
+        "id": "consent_collection_started",
+        "label": "consent_collection_started",
+        "rules": [
+          {
+            "id": "DPDP-DF-CON-1",
+            "title": "Serve a clear, plain-language consent notice",
+            "tier": "mandatory",
+            "clauses": ["Section 5"],
+            "actions": ["Complete step: Serve a clear, plain-language consent notice"],
+            "artifacts": ["Consent Notice Template", "Notice Language Register"],
+            "penalty": 50,
+            "penaltyBasis": "Breach of duties relating to notice and consent",
+            "penaltyRef": "Schedule 1 Item 4"
+          },
+          {
+            "id": "DPDP-DF-CON-2",
+            "title": "Record free, specific and unambiguous consent",
+            "tier": "mandatory",
+            "clauses": ["Section 6"],
+            "actions": ["Complete step: Record free, specific and unambiguous consent"],
+            "artifacts": ["Consent Ledger"],
+            "penalty": 50,
+            "penaltyBasis": "Breach of duties relating to notice and consent",
+            "penaltyRef": "Schedule 1 Item 4"
+          },
+          {
+            "id": "DPDP-DF-CON-3",
+            "title": "Provide an easy consent-withdrawal mechanism",
+            "tier": "recommended",
+            "clauses": ["Section 6(4)"],
+            "actions": ["Complete step: Provide an easy consent-withdrawal mechanism"],
+            "artifacts": ["Withdrawal Flow Record"],
+            "penalty": 50,
+            "penaltyBasis": "Breach of duties relating to notice and consent",
+            "penaltyRef": "Schedule 1 Item 4"
+          }
+        ]
+      },
+      {
+        "id": "children_data_processing_started",
+        "label": "children_data_processing_started",
+        "rules": [
+          {
+            "id": "DPDP-DF-CHD-1",
+            "title": "Obtain verifiable parental consent",
+            "tier": "mandatory",
+            "clauses": ["Section 9"],
+            "actions": ["Complete step: Obtain verifiable parental consent"],
+            "artifacts": ["Parental Consent Record"],
+            "penalty": 200,
+            "penaltyBasis": "Non-fulfilment of obligations relating to children",
+            "penaltyRef": "Schedule 1 Item 3"
+          },
+          {
+            "id": "DPDP-DF-CHD-2",
+            "title": "Disable tracking and targeted advertising to children",
+            "tier": "mandatory",
+            "clauses": ["Section 9(3)"],
+            "actions": ["Complete step: Disable tracking and targeted advertising to children"],
+            "artifacts": ["Ad-Targeting Configuration Record"],
+            "penalty": 200,
+            "penaltyBasis": "Non-fulfilment of obligations relating to children",
+            "penaltyRef": "Schedule 1 Item 3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "online-game-service-provider",
+    "label": "Online Game Service Provider",
+    "triggers": [
+      {
+        "id": "game_determination_required",
+        "label": "game_determination_required",
+        "rules": [
+          {
+            "id": "PROGA-OGSP-DET-1",
+            "title": "Apply for determination of the online game",
+            "tier": "mandatory",
+            "clauses": ["Rule 8"],
+            "actions": [
+              "Identify whether the game is offered as an e-sport, falls under a notified social-game category, or is subject to suo motu determination",
+              "Apply to the Authority in the prescribed digital form with details under Rule 23"
+            ],
+            "artifacts": ["Determination Application (Form)", "Rule 23 Information Package"],
+            "penalty": 1,
+            "penaltyBasis": "Offering an online game without required determination",
+            "penaltyRef": "Section 12, PROGA Act 2025"
+          },
+          {
+            "id": "PROGA-OGSP-DET-2",
+            "title": "Furnish technical and revenue-model details for examination",
+            "tier": "mandatory",
+            "clauses": ["Rule 9", "Rule 10"],
+            "actions": [
+              "Disclose technical architecture, gameplay mechanics, user interface and revenue model",
+              "Disclose whether fees, deposits or stakes carry an expectation of monetary winnings"
+            ],
+            "artifacts": ["Technical Architecture Document", "Revenue Model Disclosure"],
+            "penalty": 1,
+            "penaltyBasis": "Furnishing incomplete or incorrect determination details",
+            "penaltyRef": "Section 12, PROGA Act 2025"
+          },
+          {
+            "id": "PROGA-OGSP-DET-3",
+            "title": "Report payment-facilitation changes after determination",
+            "tier": "recommended",
+            "clauses": ["Rule 10(2)", "Rule 11"],
+            "actions": [
+              "Notify the Authority of any change affecting facilitation of payments before offering it"
+            ],
+            "artifacts": ["Change Notification Record"],
+            "penalty": 1,
+            "penaltyBasis": "Failure to report changes requiring fresh determination",
+            "penaltyRef": "Section 12, PROGA Act 2025"
+          }
+        ]
+      },
+      {
+        "id": "registration_required",
+        "label": "registration_required",
+        "rules": [
+          {
+            "id": "PROGA-OGSP-REG-1",
+            "title": "Apply to register each online game",
+            "tier": "mandatory",
+            "clauses": ["Rule 12", "Rule 13"],
+            "actions": [
+              "File a separate registration application for each online game in the digital form",
+              "Confirm online money games are not submitted for registration as e-sports"
+            ],
+            "artifacts": ["Registration Application (Form)", "Per-Game Registration Index"],
+            "penalty": 1,
+            "penaltyBasis": "Offering a game that requires registration without registering",
+            "penaltyRef": "Section 12, PROGA Act 2025"
+          },
+          {
+            "id": "PROGA-OGSP-REG-2",
+            "title": "Obtain and retain the Certificate of Registration",
+            "tier": "mandatory",
+            "clauses": ["Rule 14"],
+            "actions": [
+              "Obtain the digital Certificate of Registration with a unique registration number",
+              "Track validity (up to ten years) and surrender, suspension or cancellation status"
+            ],
+            "artifacts": ["Certificate of Registration", "Registration Validity Register"],
+            "penalty": 1,
+            "penaltyBasis": "Operating without a valid Certificate of Registration",
+            "penaltyRef": "Section 12, PROGA Act 2025"
+          },
+          {
+            "id": "PROGA-OGSP-REG-3",
+            "title": "Display registration and avoid misrepresentation",
+            "tier": "mandatory",
+            "clauses": ["Rule 15"],
+            "actions": [
+              "Prominently display determination or registration details on the game's computer resource",
+              "Do not misrepresent, advertise or offer the game contrary to its determined or registered status"
+            ],
+            "artifacts": ["Display Screenshot Evidence"],
+            "penalty": 0.5,
+            "penaltyBasis": "Misrepresentation of determination or registration status",
+            "penaltyRef": "Section 12, PROGA Act 2025"
+          }
+        ]
+      },
+      {
+        "id": "online_game_operations_started",
+        "label": "online_game_operations_started",
+        "rules": [
+          {
+            "id": "PROGA-OGSP-OPS-1",
+            "title": "Designate a point of contact",
+            "tier": "mandatory",
+            "clauses": ["Rule 16"],
+            "actions": [
+              "Designate personnel as point of contact and publish their contact details per directions"
+            ],
+            "artifacts": ["Point of Contact Designation Record"],
+            "penalty": 0.5,
+            "penaltyBasis": "Failure to designate and publish a point of contact",
+            "penaltyRef": "Section 12, PROGA Act 2025"
+          },
+          {
+            "id": "PROGA-OGSP-OPS-2",
+            "title": "Retain traffic data and metadata in India",
+            "tier": "mandatory",
+            "clauses": ["Rule 17"],
+            "actions": [
+              "Retain and store traffic data, metadata and related information on computer resources located in India per directions"
+            ],
+            "artifacts": ["Data Retention Policy", "India Hosting Evidence"],
+            "penalty": 1,
+            "penaltyBasis": "Non-compliance with data retention and localisation directions",
+            "penaltyRef": "Section 12, PROGA Act 2025"
+          },
+          {
+            "id": "PROGA-OGSP-OPS-3",
+            "title": "Comply with financial-transaction and fund directions",
+            "tier": "mandatory",
+            "clauses": ["Rule 18", "Rule 19"],
+            "actions": [
+              "Ensure facilitation, routing and settlement of user payments comply with directions",
+              "Enable verification of the determination order or Certificate of Registration before fund facilitation"
+            ],
+            "artifacts": ["Payment Compliance Record", "Verification Evidence"],
+            "penalty": 1,
+            "penaltyBasis": "Non-compliance with financial-transaction and fund directions",
+            "penaltyRef": "Section 12, PROGA Act 2025"
+          },
+          {
+            "id": "PROGA-OGSP-OPS-4",
+            "title": "Operate a grievance redressal mechanism",
+            "tier": "mandatory",
+            "clauses": ["Rule 20"],
+            "actions": [
+              "Establish and maintain a functional grievance redressal mechanism for users",
+              "Resolve grievances and enable escalation to the Authority within thirty days"
+            ],
+            "artifacts": ["Grievance Mechanism Record", "Grievance Resolution Log"],
+            "penalty": 0.5,
+            "penaltyBasis": "Failure to maintain a functional grievance redressal mechanism",
+            "penaltyRef": "Section 12, PROGA Act 2025"
+          },
+          {
+            "id": "PROGA-OGSP-OPS-5",
+            "title": "Provide user safety features",
+            "tier": "recommended",
+            "clauses": ["Rule 2(1)(i)", "Rule 6(4)"],
+            "actions": [
+              "Implement age verification or age-gating, time restrictions and parental controls",
+              "Provide user reporting, counselling support and fair-play and integrity monitoring tools"
+            ],
+            "artifacts": ["User Safety Features Inventory"],
+            "penalty": 0.5,
+            "penaltyBasis": "Inadequate user safety safeguards",
+            "penaltyRef": "Section 12, PROGA Act 2025"
+          }
+        ]
+      },
+      {
+        "id": "penalty_inquiry_initiated",
+        "label": "penalty_inquiry_initiated",
+        "rules": [
+          {
+            "id": "PROGA-OGSP-PEN-1",
+            "title": "Respond to the Authority's non-compliance notice",
+            "tier": "mandatory",
+            "clauses": ["Rule 21"],
+            "actions": [
+              "Respond to the notice of alleged non-compliance and appear before the Authority",
+              "Show cause or record any admission within the proceedings"
+            ],
+            "artifacts": ["Notice Response", "Hearing Submission"],
+            "penalty": 1,
+            "penaltyBasis": "Contravention of directions or orders under Section 8(3)",
+            "penaltyRef": "Section 12, PROGA Act 2025"
+          },
+          {
+            "id": "PROGA-OGSP-PEN-2",
+            "title": "Remediate and pay any penalty imposed",
+            "tier": "mandatory",
+            "clauses": ["Rule 21(7)", "Rule 22"],
+            "actions": [
+              "Implement corrective and remedial measures specified in the order",
+              "Pay any penalty imposed under Section 12, credited to the Consolidated Fund of India"
+            ],
+            "artifacts": ["Remediation Evidence", "Penalty Payment Receipt"],
+            "penalty": 2,
+            "penaltyBasis": "Failure to remediate or pay penalty; risk of registration suspension or prohibition",
+            "penaltyRef": "Section 12, PROGA Act 2025"
+          },
+          {
+            "id": "PROGA-OGSP-PEN-3",
+            "title": "File an appeal where aggrieved",
+            "tier": "recommended",
+            "clauses": ["Rule 7"],
+            "actions": [
+              "File an appeal to the Appellate Authority within thirty days of the order"
+            ],
+            "artifacts": ["Appeal Filing Record"],
+            "penalty": 1,
+            "penaltyBasis": "Loss of appellate remedy if not filed within thirty days",
+            "penaltyRef": "Section 12, PROGA Act 2025"
+          }
+        ]
+      }
+    ]
+  }
+]

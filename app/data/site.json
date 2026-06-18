@@ -1,0 +1,37 @@
+{
+  "brand": { "name": "Nyaykosh", "deva": "न्यायकोष" },
+  "footer": {
+    "about": "Nyaykosh — an open access platform for Indian laws — read the text, download official PDFs and XML, and build on consumable APIs. Test your obligations in the Compliance Simulator.",
+    "columns": [
+      {
+        "heading": "Platform",
+        "links": [
+          { "href": "/laws", "label": "All Laws" },
+          { "href": "/simulator", "label": "Compliance Simulator" },
+          { "href": "/about", "label": "About" },
+          { "href": "/laws", "label": "API Catalog" }
+        ]
+      },
+      {
+        "heading": "Formats",
+        "links": [
+          { "href": "/laws", "label": "PDF Documents" },
+          { "href": "/laws", "label": "Structured XML" },
+          { "href": "/laws", "label": "REST APIs" },
+          { "href": "/about", "label": "Data Standards" }
+        ]
+      },
+      {
+        "heading": "Resources",
+        "links": [
+          { "href": "/about", "label": "Developer Docs" },
+          { "href": "/about", "label": "Methodology" },
+          { "href": "/about", "label": "Contact" },
+          { "href": "/about", "label": "Disclaimer" }
+        ]
+      }
+    ],
+    "copyright": "© 2026 Nyaykosh (न्यायकोष). For informational purposes only — not legal advice.",
+    "tagline": "Built for transparent access to law."
+  }
+}
