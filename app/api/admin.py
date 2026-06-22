@@ -83,6 +83,38 @@ def delete_law(law_id: str, db: Session = Depends(get_db)) -> Response:
     return Response(status_code=204)
 
 
+# --- Law PDF upload (official gazette copy) --------------------------------
+
+@router.put("/laws/{law_id}/pdf", status_code=204)
+def upload_law_pdf(
+    law_id: str,
+    file: UploadFile = File(...),
+    db: Session = Depends(get_db),
+) -> Response:
+    """Upload (or replace) the official PDF for a law. Served via the public
+    /laws/{slug}/pdf endpoint and the 'Access this law' panel."""
+    content = file.file.read()
+    if not content:
+        raise HTTPException(status_code=400, detail="Empty file.")
+    ctype = (file.content_type or "").lower()
+    name = (file.filename or "").lower()
+    if "pdf" not in ctype and not name.endswith(".pdf"):
+        raise HTTPException(status_code=400, detail="File must be a PDF.")
+    if not store.set_law_pdf(db, law_id, content, file.filename or f"{law_id}.pdf"):
+        raise HTTPException(status_code=404, detail=f"Law '{law_id}' not found.")
+    return Response(status_code=204)
+
+
+@router.delete("/laws/{law_id}/pdf", status_code=204)
+def remove_law_pdf(law_id: str, db: Session = Depends(get_db)) -> Response:
+    """Remove an uploaded PDF (the public endpoint falls back to a generated one)."""
+    if not store.delete_law_pdf(db, law_id):
+        raise HTTPException(
+            status_code=404, detail=f"No uploaded PDF for law '{law_id}'."
+        )
+    return Response(status_code=204)
+
+
 # --- Simulator rules: read + replace --------------------------------------
 
 @router.get("/personas", response_model=List[Persona])

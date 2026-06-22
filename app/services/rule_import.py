@@ -16,6 +16,8 @@ from app.schemas.common import ImportIssue
 from app.schemas.simulator import ComplianceRule, Persona, TriggerEvent
 
 TEMPLATE_COLUMNS = [
+    "Law",
+    "Law ID",
     "Persona",
     "Persona ID",
     "Trigger Label",
@@ -32,6 +34,8 @@ TEMPLATE_COLUMNS = [
 ]
 
 TEMPLATE_SAMPLE_ROW = {
+    "Law": "Digital Personal Data Protection Act",
+    "Law ID": "dpdp-act-2023",
     "Persona": "Significant Data Fiduciary",
     "Persona ID": "significant-data-fiduciary",
     "Trigger Label": "sdf_designation_received",
@@ -92,6 +96,7 @@ def parse_rows(rows: List[Dict[str, Any]]) -> Tuple[List[Persona], int, List[Imp
     for i, row in enumerate(rows):
         row_num = i + 1
 
+        law_label = _str(_pick(row, "Law", "Law Label"))
         persona_label = _str(_pick(row, "Persona", "Persona Label"))
         trigger_label = _str(_pick(row, "Trigger Label", "Trigger"))
         rule_id = _str(_pick(row, "Rule ID", "RuleID", "ID"))
@@ -100,10 +105,18 @@ def parse_rows(rows: List[Dict[str, Any]]) -> Tuple[List[Persona], int, List[Imp
         penalty_raw = _pick(row, "Penalty (crore)", "Penalty", "Penalty Crore")
 
         # Skip fully blank rows silently.
-        if not persona_label and not trigger_label and not rule_id and not title:
+        if (
+            not law_label
+            and not persona_label
+            and not trigger_label
+            and not rule_id
+            and not title
+        ):
             continue
 
         row_issues: List[str] = []
+        if not law_label:
+            row_issues.append("missing Law")
         if not persona_label:
             row_issues.append("missing Persona")
         if not trigger_label:
@@ -136,6 +149,7 @@ def parse_rows(rows: List[Dict[str, Any]]) -> Tuple[List[Persona], int, List[Imp
 
         seen_rule_ids.add(rule_id)
 
+        law_id = _str(_pick(row, "Law ID", "LawID")) or _slugify(law_label)
         persona_id = _str(_pick(row, "Persona ID", "PersonaID")) or _slugify(persona_label)
         trigger_id = _str(_pick(row, "Trigger ID", "TriggerID")) or _slugify(trigger_label)
 
@@ -151,10 +165,19 @@ def parse_rows(rows: List[Dict[str, Any]]) -> Tuple[List[Persona], int, List[Imp
             penaltyRef=_str(_pick(row, "Penalty Ref", "Reference", "Ref")),
         )
 
-        persona = persona_map.get(persona_id)
+        # Key by (law, persona) so the same persona id can appear under more
+        # than one law without the rows colliding.
+        persona_key = f"{law_id}::{persona_id}"
+        persona = persona_map.get(persona_key)
         if persona is None:
-            persona = Persona(id=persona_id, label=persona_label, triggers=[])
-            persona_map[persona_id] = persona
+            persona = Persona(
+                id=persona_id,
+                label=persona_label,
+                lawId=law_id,
+                lawLabel=law_label,
+                triggers=[],
+            )
+            persona_map[persona_key] = persona
 
         trigger = next((t for t in persona.triggers if t.id == trigger_id), None)
         if trigger is None:
@@ -180,10 +203,22 @@ def merge_personas(
     updated = 0
 
     for in_p in incoming:
-        p = next((m for m in merged if m.id == in_p.id), None)
+        # Match on (lawId, id) so personas are scoped to their law.
+        p = next(
+            (m for m in merged if m.id == in_p.id and m.lawId == in_p.lawId), None
+        )
         if p is None:
-            p = Persona(id=in_p.id, label=in_p.label, triggers=[])
+            p = Persona(
+                id=in_p.id,
+                label=in_p.label,
+                lawId=in_p.lawId,
+                lawLabel=in_p.lawLabel,
+                triggers=[],
+            )
             merged.append(p)
+        elif in_p.lawLabel:
+            # Refresh law label on an existing persona if the import supplies one.
+            p.lawLabel = in_p.lawLabel
         for in_t in in_p.triggers:
             t = next((m for m in p.triggers if m.id == in_t.id), None)
             if t is None:

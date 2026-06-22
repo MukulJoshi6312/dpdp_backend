@@ -33,6 +33,10 @@ class TriggerEvent(BaseModel):
 class Persona(BaseModel):
     id: str
     label: str
+    # The law this persona's rules belong to (e.g. PROGA). Used by the
+    # simulator UI to drive the Law -> Persona -> Trigger cascade.
+    lawId: str = ""
+    lawLabel: str = ""
     triggers: List[TriggerEvent] = Field(default_factory=list)
 
 

@@ -36,6 +36,9 @@ class Law(BaseModel):
     apiSlug: str
     provisions: List[Provision] = Field(default_factory=list)
     penalties: List[Penalty] = Field(default_factory=list)
+    # Whether an official PDF has been uploaded for this law (read-only; set by
+    # the API from the DB, not stored inside the JSONB record).
+    hasPdf: bool = False
 
 
 class LawCreate(BaseModel):

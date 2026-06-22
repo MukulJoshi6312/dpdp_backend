@@ -51,7 +51,7 @@ def seed() -> None:
             print("  laws already present — skipping")
 
         # Personas / simulator rules
-        if db.execute(select(PersonaModel.id)).first() is None:
+        if db.execute(select(PersonaModel.row_id)).first() is None:
             store.replace_personas(db, _load("simulator-rules.json"))
             print("  seeded personas")
         else:

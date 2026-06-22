@@ -60,6 +60,57 @@ def delete_law(db: Session, law_id: str) -> bool:
     return True
 
 
+# --- Law PDF (uploaded official copy) -------------------------------------
+
+def _find_law_row(db: Session, slug: str) -> Optional[LawModel]:
+    """Resolve a law row by id or apiSlug (mirrors find_law)."""
+    return db.execute(
+        select(LawModel).where((LawModel.api_slug == slug) | (LawModel.id == slug))
+    ).scalars().first()
+
+
+def set_law_pdf(db: Session, slug: str, content: bytes, filename: str) -> bool:
+    row = _find_law_row(db, slug)
+    if row is None:
+        return False
+    row.pdf_bytes = content
+    row.pdf_filename = filename
+    db.commit()
+    return True
+
+
+def get_law_pdf(db: Session, slug: str) -> Optional[tuple]:
+    """Return (bytes, filename) for the uploaded PDF, or None if not set."""
+    row = _find_law_row(db, slug)
+    if row is None or row.pdf_bytes is None:
+        return None
+    return row.pdf_bytes, row.pdf_filename or f"{row.id}.pdf"
+
+
+def delete_law_pdf(db: Session, slug: str) -> bool:
+    row = _find_law_row(db, slug)
+    if row is None or row.pdf_bytes is None:
+        return False
+    row.pdf_bytes = None
+    row.pdf_filename = None
+    db.commit()
+    return True
+
+
+def law_has_pdf(db: Session, slug: str) -> bool:
+    row = _find_law_row(db, slug)
+    return row is not None and row.pdf_bytes is not None
+
+
+def law_ids_with_pdf(db: Session) -> set:
+    """Set of law ids that have an uploaded PDF (single query, for list views)."""
+    return set(
+        db.execute(
+            select(LawModel.id).where(LawModel.pdf_bytes.isnot(None))
+        ).scalars().all()
+    )
+
+
 def _law_row(law: Dict[str, Any]) -> LawModel:
     row = LawModel(id=law["id"])
     _apply_law(row, law)
@@ -79,7 +130,9 @@ def _apply_law(row: LawModel, law: Dict[str, Any]) -> None:
 # --- Simulator personas/rules ---------------------------------------------
 
 def read_personas(db: Session) -> List[Dict[str, Any]]:
-    rows = db.execute(select(PersonaModel).order_by(PersonaModel.position, PersonaModel.id)).scalars().all()
+    rows = db.execute(
+        select(PersonaModel).order_by(PersonaModel.position, PersonaModel.row_id)
+    ).scalars().all()
     return [r.data for r in rows]
 
 
@@ -87,7 +140,15 @@ def replace_personas(db: Session, personas: List[Dict[str, Any]]) -> None:
     """Replace the entire persona set (used by import-commit and PUT /personas)."""
     db.query(PersonaModel).delete()
     for pos, p in enumerate(personas):
-        db.add(PersonaModel(id=p["id"], label=p.get("label", ""), position=pos, data=p))
+        db.add(
+            PersonaModel(
+                persona_id=p["id"],
+                law_id=p.get("lawId", ""),
+                label=p.get("label", ""),
+                position=pos,
+                data=p,
+            )
+        )
     db.commit()
 
 

@@ -8,7 +8,9 @@ from __future__ import annotations
 
 from typing import Any, Dict, List
 
-from sqlalchemy import Boolean, Integer, String, Text
+from typing import Optional
+
+from sqlalchemy import Boolean, Integer, LargeBinary, String, Text
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Mapped, mapped_column
 
@@ -27,12 +29,20 @@ class LawModel(Base):
     short_desc: Mapped[str] = mapped_column(Text, default="")
     # Full law record (matches schemas.law.Law), the source of truth for reads.
     data: Mapped[Dict[str, Any]] = mapped_column(JSONB)
+    # Optional uploaded official PDF (the actual gazette copy), served by the
+    # "Access this law -> Official PDF" link when present.
+    pdf_bytes: Mapped[Optional[bytes]] = mapped_column(LargeBinary, nullable=True)
+    pdf_filename: Mapped[Optional[str]] = mapped_column(String, nullable=True)
 
 
 class PersonaModel(Base):
     __tablename__ = "personas"
 
-    id: Mapped[str] = mapped_column(String, primary_key=True)
+    # Surrogate primary key: the same persona id can appear under more than one
+    # law (Law -> Persona scoping), so persona_id is NOT unique on its own.
+    row_id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    persona_id: Mapped[str] = mapped_column("id", String, index=True)
+    law_id: Mapped[str] = mapped_column(String, default="", index=True)
     label: Mapped[str] = mapped_column(String)
     # Ordering so personas come back in a stable, insertion-like order.
     position: Mapped[int] = mapped_column(Integer, default=0, index=True)

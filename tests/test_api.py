@@ -47,6 +47,8 @@ def test_simulator_personas_and_evaluate():
     personas = client.get("/v1/simulator/personas").json()
     assert len(personas) >= 1
     p = personas[0]
+    # Each persona carries the law it belongs to (drives the Law dropdown).
+    assert "lawId" in p and "lawLabel" in p
     t = p["triggers"][0]
     rule = t["rules"][0]
 
@@ -92,3 +94,10 @@ def test_template_download():
     assert resp.headers["content-type"].startswith(
         "application/vnd.openxmlformats"
     )
+    # The template must lead with the Law columns so imports can drive the
+    # Law -> Persona -> Trigger hierarchy.
+    from app.services.rule_import import workbook_to_rows
+
+    rows = workbook_to_rows(resp.content)
+    assert "Law" in rows[0] and "Law ID" in rows[0]
+    assert rows[0]["Law"] and rows[0]["Law ID"]
